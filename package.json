@@ -43,7 +43,7 @@
   "userscript": {
     "namespace": "https://humblebundle.com",
     "match": [
-      "*://www.humblebundle.com/*"
+      "*://*.humblebundle.com/*"
     ],
     "connect": [
       "api.steampowered.com",
