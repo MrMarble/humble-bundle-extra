@@ -46,6 +46,7 @@ async function readPackageAsync() {
     name: json.name,
     author: json.author.name,
     version: json.version,
+    description: json.description,
     source: json.repository.url.replace(/git\+|\.git/gm, ""),
   }
 }
