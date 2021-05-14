@@ -21,3 +21,15 @@ This userscript adds some features to [humble bundle](https://humblebundle.com),
 
 - Adds Steam store link to games
 - Marks games as owned if logged in the Steam store
+
+## Installation
+
+You can install this script from [greasyfork](https://greasyfork.org/es/scripts/426463-humble-bundle-extra)
+
+## Usage
+
+1. Visit any HumbleBundle bundle page
+   - If your are not logged in to the steam store a pop up will appear asking you to log in
+   - Reload the page after logging in on steam
+2. All the games found on steam will have a link on the name (some times the game can't be found)
+3. If you own any of the games, its name will be green and the lock icon will disappear
