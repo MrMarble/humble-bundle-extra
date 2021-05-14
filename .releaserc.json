@@ -20,7 +20,16 @@
         [
             "@semantic-release/exec",
             {
-                "publishCmd": "yarn version --new-version ${nextRelease.version} && yarn build:clean"
+                "prepareCmd": "yarn version --new-version ${nextRelease.version}"
+            }
+        ],
+        [
+            "@semantic-release/git",
+            {
+                "assets": [
+                    "package.json"
+                ],
+                "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
             }
         ],
         [
