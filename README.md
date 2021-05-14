@@ -33,3 +33,6 @@ You can install this script from [greasyfork](https://greasyfork.org/es/scripts/
    - Reload the page after logging in on steam
 2. All the games found on steam will have a link on the name (some times the game can't be found)
 3. If you own any of the games, its name will be green and the lock icon will disappear
+
+## Screenshot
+![imagen](https://user-images.githubusercontent.com/4268580/118278083-d763cc00-b4c9-11eb-928b-106c39d6e7aa.png)
