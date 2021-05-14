@@ -1,5 +1,5 @@
+import cleanup from "rollup-plugin-cleanup"
 import sizes from "rollup-plugin-sizes"
-import { terser } from "rollup-plugin-terser"
 
 import { generateMeta } from "./plugin/rollup-plugin-userscript-meta"
 
@@ -10,5 +10,5 @@ export default {
     dir: "dist",
     format: "iife",
   },
-  plugins: [terser(), sizes(), generateMeta()],
+  plugins: [cleanup(), sizes(), generateMeta()],
 }
