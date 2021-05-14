@@ -52,6 +52,7 @@
     "grant": [
       "GM_xmlhttpRequest"
     ],
-    "icon": "https://humblebundle-a.akamaihd.net/static/hashed/47e474eed38083df699b7dfd8d29d575e3398f1e.ico"
+    "icon": "https://humblebundle-a.akamaihd.net/static/hashed/47e474eed38083df699b7dfd8d29d575e3398f1e.ico",
+    "license": "MIT"
   }
 }
