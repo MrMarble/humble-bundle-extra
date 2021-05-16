@@ -1,4 +1,4 @@
-import { cacheOwnedApps, cacheSteamApps } from "./steam"
+import { cacheOwnedApps, cacheSteamApps, clearOwnedCache } from "./steam"
 import { createModal, isBundlePage, sanitize } from "./utils"
 
 function showModal() {
@@ -18,6 +18,7 @@ async function main() {
   const loggedIn = owned.length != 0
 
   if (!loggedIn) {
+    clearOwnedCache()
     showModal()
   }
 

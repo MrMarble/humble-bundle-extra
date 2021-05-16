@@ -69,3 +69,6 @@ export const cacheOwnedApps = async (force) => {
 
   return data
 }
+
+export const clearOwnedCache = () =>
+  localStorage.removeItem(CACHE_OWNED_APPS_KEY)
