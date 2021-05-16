@@ -11,6 +11,8 @@ export const xtmlHttp = (options) => {
       ...options,
       onload: resolve,
       onabort: reject,
+      ontimeout: reject,
+      onerror: reject,
     })
   })
 }
