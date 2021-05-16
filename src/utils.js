@@ -77,17 +77,19 @@ export const isBundlePage = () => {
   )
 }
 
+export const closeModal =
+  "(()=> document.querySelector('.charity-details-view.humblemodal-wrapper').remove())()"
 export const createModal = (icon, title, text) =>
   htmlToElement(`
   <div class="charity-details-view humblemodal-wrapper" tabindex="0">
     <div class="humblemodal-modal humblemodal-modal--open" style="opacity: 1;">
-      <a class="js-close-modal close-modal" href="#" onclick="(function(e){e.preventDefault();e.target.parentElement.parentElement.parentElement.remove()})(event)">
-        <i class="hb ${icon}"></i>
-      </a>
+      <span class="js-close-modal close-modal" onclick="${closeModal}">
+        <i class="hb hb-times"></i>
+      </span>
       <div class="charity-info-wrapper">
         <div class="charity-media">
           <div class="charity-logo">
-            <i class="hb hb-exclamation-circle" style="font-size:13em;color:#c9262c"></i>
+            <i class="hb ${icon}" style="font-size:13em;color:#c9262c"></i>
           </div> 
         </div>
         <div class="charity-details">
