@@ -20,7 +20,7 @@ This userscript adds some features to [humble bundle](https://humblebundle.com),
 ## Features
 
 - Adds Steam store link to games
-- Marks games as owned if logged in the Steam store
+- Marks games as owned if logged in the Steam store. `Your profile privacy settings have to be set to public`
 
 ## Installation
 
@@ -35,4 +35,5 @@ You can install this script from [greasyfork](https://greasyfork.org/es/scripts/
 3. If you own any of the games, its name will be green and the lock icon will disappear
 
 ## Screenshot
+
 ![imagen](https://user-images.githubusercontent.com/4268580/118278083-d763cc00-b4c9-11eb-928b-106c39d6e7aa.png)
