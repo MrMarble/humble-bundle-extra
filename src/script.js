@@ -1,5 +1,5 @@
 import { cacheOwnedApps, cacheSteamApps, clearOwnedCache } from "./steam"
-import { closeModal, createModal, isBundlePage, sanitize } from "./utils"
+import { closeModal, createModal, isBundlePage, isChoicePage, sanitize } from "./utils"
 
 const HIDE_MODAL = "&&hh_extras_modal&&"
 
@@ -14,7 +14,7 @@ function showModal() {
   document.querySelector("#site-modal").appendChild(modal)
 }
 
-async function main() {
+async function bundle() {
   const apps = await cacheSteamApps()
   const owned = await cacheOwnedApps()
 
@@ -41,6 +41,33 @@ async function main() {
   })
 }
 
+async function choice() {
+  const apps = await cacheSteamApps()
+  const owned = await cacheOwnedApps()
+
+  const loggedIn = owned.length != 0
+  if (!loggedIn) {
+    clearOwnedCache()
+    if (!localStorage.getItem(HIDE_MODAL)) {
+      showModal()
+    }
+  }
+
+  document.querySelectorAll(".content-choice-title").forEach((el) => {
+    let appid
+    if ((appid = apps[sanitize(el.textContent)])) {
+      el.innerHTML = `<a href="https://store.steampowered.com/app/${appid}" style="text-decoration:underline;color:#ecf1fe" target="_blank" rel="noopener" title="Visit Steam Store">${el.textContent}</a>`
+
+      if (loggedIn && owned.includes(appid)) {
+        el.firstChild.style.color = "#7f9a2f"
+      }
+    }
+  })
+}
+
+
 if (isBundlePage()) {
-  main()
+  bundle()
+} else if (isChoicePage()) {
+  choice()
 }

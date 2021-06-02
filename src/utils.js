@@ -50,7 +50,8 @@ const decodeEntities = (() => {
  */
 export const sanitize = (str) => {
   return decodeEntities(str)
-    .replace(/[\u{2122}\u{00AE}]/gu, "")
+    .replace(/[\u{2122}\u{00AE}\n]/gu, "")
+    .trim()
     .toLowerCase()
 }
 
@@ -74,6 +75,16 @@ export const htmlToElement = (html) => {
 export const isBundlePage = () => {
   return !!document.querySelector(
     "div.inner-main-wrapper div.bundle-info-container"
+  )
+}
+
+/**
+ *  Checks if current page is choice
+ * @returns {boolean}
+ */
+export const isChoicePage = () => {
+  return !!document.querySelector(
+    "div.inner-main-wrapper div.subscriber-hub"
   )
 }
 
