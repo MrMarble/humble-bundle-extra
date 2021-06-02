@@ -26,15 +26,13 @@ async function bundle() {
     }
   }
 
-  document.querySelectorAll(".front-page-art-image-text").forEach((el) => {
+  document.querySelectorAll(".tier-item-view .item-title").forEach((el) => {
     let appid
     if ((appid = apps[sanitize(el.textContent)])) {
-      el.innerHTML = `<a href="https://store.steampowered.com/app/${appid}" style="text-decoration:underline;font-weight:normal" target="_blank" rel="noopener" title="Visit Steam Store">${el.textContent}</a>`
+      const url = `https://store.steampowered.com/app/${appid}`
+      el.innerHTML = `<a href="${url}" style="text-decoration:underline;color:#ecf1fe" target="_blank" rel="noopener" title="Visit Steam Store" onclick="(()=> window.open('${url}','_blank'))()">${el.textContent}</a>`
 
       if (loggedIn && owned.includes(appid)) {
-        el.parentElement.parentElement
-          .querySelector(".dd-caption-lock")
-          .remove()
         el.firstChild.style.color = "#7f9a2f"
       }
     }

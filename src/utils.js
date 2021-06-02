@@ -74,7 +74,7 @@ export const htmlToElement = (html) => {
  */
 export const isBundlePage = () => {
   return !!document.querySelector(
-    "div.inner-main-wrapper div.bundle-info-container"
+    "div.inner-main-wrapper div.bundle-page"
   )
 }
 
