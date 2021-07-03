@@ -1,5 +1,5 @@
 import { cacheOwnedApps, cacheSteamApps, clearOwnedCache } from "./steam"
-import { closeModal, createModal, isBundlePage, isChoicePage, sanitize } from "./utils"
+import { closeModal, createModal, isBundlePage, isChoicePage, sanitize, shouldUpdateCache } from "./utils"
 
 const HIDE_MODAL = "&&hh_extras_modal&&"
 
@@ -40,8 +40,9 @@ async function bundle() {
 }
 
 async function choice() {
-  const apps = await cacheSteamApps()
-  const owned = await cacheOwnedApps()
+  const force = shouldUpdateCache()
+  const apps = await cacheSteamApps(force)
+  const owned = await cacheOwnedApps(force)
 
   const loggedIn = owned.length != 0
   if (!loggedIn) {

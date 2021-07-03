@@ -89,6 +89,27 @@ export const isChoicePage = () => {
   )
 }
 
+/**
+ * Checks if cache is older than a week
+ * 
+ * @returns {boolean}
+ */
+export const shouldUpdateCache = () => {
+  const WEEK = 7 * 24 * 60 * 60 * 1000
+  const lastCached = localStorage.getItem("&&hh_cache&&")
+  if (lastCached === null) {
+    localStorage.setItem("&&hh_cache&&", Date.now())
+    return true
+  }
+
+  if (Date.now() - lastCached > WEEK) {
+    localStorage.setItem("&&hh_cache&&", Date.now())
+    return true
+  }
+
+  return false
+}
+
 export const closeModal =
   "(()=> document.querySelector('.charity-details-view.humblemodal-wrapper').remove())()"
 export const createModal = (icon, title, text) =>
