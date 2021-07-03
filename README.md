@@ -15,7 +15,7 @@
   </a>
 </p>
 
-This userscript adds some features to [humble bundle](https://humblebundle.com), only on bundles pages at the moment
+This userscript adds some features to [humble bundle](https://humblebundle.com). Works on bundle and choice pages
 
 ## Features
 
