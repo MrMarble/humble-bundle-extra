@@ -84,7 +84,8 @@ export const isBundlePage = () => {
  */
 export const isChoicePage = () => {
   return !!document.querySelector(
-    "div.inner-main-wrapper div.subscriber-hub"
+    `div.inner-main-wrapper div.subscriber-hub,
+    div.inner-main-wrapper .js-monthly-product-page-choice`
   )
 }
 
