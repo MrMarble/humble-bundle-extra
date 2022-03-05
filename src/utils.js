@@ -9,6 +9,10 @@ export const xtmlHttp = (options) => {
     // eslint-disable-next-line no-undef
     GM_xmlhttpRequest({
       timeout: 3000,
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
       ...options,
       onload: resolve,
       onabort: reject,
