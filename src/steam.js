@@ -49,7 +49,7 @@ export const cacheSteamApps = async (force) => {
 
 const fetchOwnedApps = async () => {
   const r = await xtmlHttp({
-    url: "https://store.steampowered.com/dynamicstore/userdata/",
+    url: `https://store.steampowered.com/dynamicstore/userdata/?boost=${Date.now()}`,
     method: "GET",
   })
 

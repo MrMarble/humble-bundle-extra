@@ -8,6 +8,7 @@ export const xtmlHttp = (options) => {
   return new Promise((resolve, reject) => {
     // eslint-disable-next-line no-undef
     GM_xmlhttpRequest({
+      timeout: 3000,
       ...options,
       onload: resolve,
       onabort: reject,
@@ -73,9 +74,7 @@ export const htmlToElement = (html) => {
  * @returns {boolean}
  */
 export const isBundlePage = () => {
-  return !!document.querySelector(
-    "div.inner-main-wrapper div.bundle-page"
-  )
+  return !!document.querySelector("div.inner-main-wrapper div.bundle-page")
 }
 
 /**
@@ -85,13 +84,13 @@ export const isBundlePage = () => {
 export const isChoicePage = () => {
   return !!document.querySelector(
     `div.inner-main-wrapper div.subscriber-hub,
-    div.inner-main-wrapper .js-monthly-product-page-choice`
+    div.inner-main-wrapper .js-content-choices`
   )
 }
 
 /**
  * Checks if cache is older than a week
- * 
+ *
  * @returns {boolean}
  */
 export const shouldUpdateCache = () => {
