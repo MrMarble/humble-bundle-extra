@@ -34,6 +34,8 @@ async function bundle() {
 
       if (loggedIn && owned.includes(appid)) {
         el.firstChild.style.color = "#7f9a2f"
+        el.parentElement.parentElement.style.opacity = "25%";
+        el.parentElement.parentElement.style.order = parseInt(el.parentElement.parentElement.style.order)+100;
       }
     }
   })
@@ -59,6 +61,8 @@ async function choice() {
 
       if (loggedIn && owned.includes(appid)) {
         el.firstChild.style.color = "#7f9a2f"
+        el.parentElement.parentElement.style.opacity = "25%";
+        el.parentElement.parentElement.style.order = parseInt(el.parentElement.parentElement.style.order)+100;
       }
     }
   })
